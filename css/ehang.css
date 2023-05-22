@@ -1,0 +1,234 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  z-index: 999;
+  box-shadow: 0 0 10px 1px #ccc;
+  background-color: #f5f5f5;
+}
+.header .ehang-logo {
+  float: left;
+}
+.header .ehang-logo .ehang-logo-img {
+  height: 50px;
+}
+.header > a {
+  font-size: 1rem;
+  font-family: '宋体';
+}
+.header > a:hover {
+  color: #ffa500;
+  text-decoration: none;
+}
+.header .btn-login {
+  float: right;
+  border-radius: 8px;
+  margin: 9px 0;
+  padding: 3px 24px;
+  border: 1px solid #4e6efb;
+  background-color: #6c99c5;
+  overflow: hidden;
+}
+.header .btn-login > a {
+  color: darkblue;
+  overflow: hidden;
+  font-weight: bold;
+}
+.header .btn-login > a:hover {
+  color: #ffa500;
+  text-decoration: none;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.footer > p {
+  text-align: center;
+  font-size: 10px;
+}
+.main {
+  position: absolute;
+  left: 0;
+  margin-top: 3.5rem;
+  transform: translateX(30%);
+}
+.main > .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  grid-template-rows: repeat(2, 246px);
+  grid-gap: 58px;
+  position: absolute;
+  left: 47%;
+  margin-top: 26px;
+  transform: translateX(-3%);
+}
+.main > .wrapper .box1 {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2.5rem 0;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  background-color: #ffffff;
+  border-radius: 10px !important;
+  box-shadow: 2px 0 7px #ccc;
+}
+.main > .wrapper .box1:hover {
+  background-color: rgba(220, 223, 245, 0.7);
+  cursor: pointer;
+}
+.main > .wrapper .box1 .right-info {
+  margin-top: 10px;
+}
+.main > .wrapper .box1 .right-info > p:first-child {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.main > .wrapper .box1 .right-info > p:last-child {
+  font-size: 1rem;
+  margin-top: 6rem;
+}
+.main > .wrapper .box2 {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2.5rem 0;
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  background-color: #ffffff;
+  border-radius: 10px !important;
+  box-shadow: 2px 0 7px #ccc;
+}
+.main > .wrapper .box2:hover {
+  background-color: rgba(135, 206, 235, 0.7);
+  cursor: pointer;
+}
+.main > .wrapper .box2 .right-info {
+  margin-top: 10px;
+}
+.main > .wrapper .box2 .right-info > p:first-child {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.main > .wrapper .box2 .right-info > p:last-child {
+  font-size: 1rem;
+  margin-top: 6rem;
+}
+.main > .wrapper .box3 {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2.5rem 0;
+  grid-row: 1 / span 1;
+  grid-column: 3 / span 1;
+  background-color: #ffffff;
+  border-radius: 10px !important;
+  box-shadow: 2px 0 7px #ccc;
+}
+.main > .wrapper .box3:hover {
+  background-color: rgba(255, 192, 203, 0.7);
+  cursor: pointer;
+}
+.main > .wrapper .box3 .right-info {
+  margin-top: 10px;
+}
+.main > .wrapper .box3 .right-info > p:first-child {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.main > .wrapper .box3 .right-info > p:last-child {
+  font-size: 1rem;
+  margin-top: 6rem;
+}
+.main > .wrapper .box4 {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2.5rem 0;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+  background-color: #ffffff;
+  border-radius: 10px !important;
+  box-shadow: 2px 0 7px #ccc;
+}
+.main > .wrapper .box4:hover {
+  background-color: rgba(244, 235, 213, 0.7);
+  cursor: pointer;
+}
+.main > .wrapper .box4 .right-info {
+  margin-top: 10px;
+}
+.main > .wrapper .box4 .right-info > p:first-child {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.main > .wrapper .box4 .right-info > p:last-child {
+  font-size: 1rem;
+  margin-top: 6rem;
+}
+.main > .wrapper .box5 {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2.5rem 0;
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  background-color: #ffffff;
+  border-radius: 10px !important;
+  box-shadow: 2px 0 7px #ccc;
+}
+.main > .wrapper .box5:hover {
+  background-color: rgba(255, 255, 153, 0.7);
+  cursor: pointer;
+}
+.main > .wrapper .box5 .right-info {
+  margin-top: 10px;
+}
+.main > .wrapper .box5 .right-info > p:first-child {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.main > .wrapper .box5 .right-info > p:last-child {
+  font-size: 1rem;
+  margin-top: 6rem;
+}
+.main > .wrapper .box6 {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2.5rem 0;
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 1;
+  background-color: #ffffff;
+  border-radius: 10px !important;
+  box-shadow: 2px 0 7px #ccc;
+}
+.main > .wrapper .box6:hover {
+  background-color: rgba(144, 238, 144, 0.7);
+  cursor: pointer;
+}
+.main > .wrapper .box6 .right-info {
+  margin-top: 10px;
+}
+.main > .wrapper .box6 .right-info > p:first-child {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.main > .wrapper .box6 .right-info > p:last-child {
+  font-size: 1rem;
+  margin-top: 6rem;
+}
+.main > p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+.main > p:last-child {
+  padding-top: 1rem;
+}
+.main > p > strong {
+  font-weight: bold !important;
+}

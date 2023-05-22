@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>主页</title>
+  <script src="./jquery.js"></script>
+</head>
+<body>
+    <h1>Home</h1>
+    <button id="btn-logout">退出</button>
+    <script>
+      $(function() {
+        // 获取用户名
+        $.get('/pages/username', (res) => {
+          if (res.status === 0) {
+            alert('欢迎你，' + res.username)
+          } else {
+            alert('请先登录。')
+            location.href = './login.html'
+          }
+        })
+
+
+        // 退出 - 给退出按钮绑定点击事件
+        $('#btn-logout').on('click', function() {
+          $.post('/pages/logout', (res) => {
+            if(res.status !== 0) {
+              alert('退出失败。')
+            }else {
+              alert('退出成功。')
+              // 跳转到登录页面
+              location.href = './login.html'
+            }
+          })
+        })
+      })
+    </script>
+</body>
+</html>

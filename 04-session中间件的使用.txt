@@ -1,0 +1,14 @@
+5.4 在 Express 中使用 Session 认证
+1. 安装 express-session 中间件
+在 Express 项目中，只需要安装 express-session 中间件，即可在项目中使用 Session 认证。
+命令： npm i express-session 
+
+2. 配置 express-session 中间件
+express-session 中间件安装成功后，需要通过 app.use() 来注册 session 中间件。
+
+3. 向 session 中存数据
+当 express-session 中间件配置成功后，即可通过 req.session (在配置 express-session 之前， req 是没有 session 属性的。) 来访问和使用 session 对象，从而存储用户的关键信息。
+
+
+4. 从 session 中取数据
+可以直接从 req.session 对象上获取之前存储的数据。

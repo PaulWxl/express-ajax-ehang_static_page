@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录</title>
+  <link rel="stylesheet" href="../lib/layui/layui.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <script src="./jquery.js"></script>
+  <script src="../lib/layui/layui.all.js"></script>
+  <script src="../lib/font2/iconfont.js"></script>
+
+</head>
+<body>
+  <div class="form-container">
+    <div class="login-logo">
+      <img src="../image/ehang_logo_queto.png" alt="">
+    </div>
+    <div class="form-user-pas-login">
+      <form class="layui-form" action="" id="form1">
+        <div class="layui-form-item">
+          <!-- <label class="layui-form-label">
+            
+          </label> -->
+          <span>
+            <svg class="icon icon-username" style="width: 20px; height: 20px;" aria-hidden="true">
+              <use xlink:href="#icon-username"></use>
+            </svg>
+          </span>
+          <div class="layui-input-block">
+            <input type="text" name="username" required  lay-verify="required" placeholder="账号" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <span>
+            <svg class="icon icon-password" style="width: 20px; height: 20px;" aria-hidden="true">
+              <use xlink:href="#icon-password"></use>
+            </svg>
+          </span>
+          <div class="layui-input-block">
+            <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">登 录</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+  
+
+  <script>
+    $(function() {
+      // 监听表单的 submit 事件，发起登录请求
+      $('#form1').on('submit', function(e) {
+        // 阻止表单的默认提交行为
+        e.preventDefault()
+        // 发起登录请求
+        // 通过 $(this).serialize() 获取表单数据，并作为参数
+        // JQ 中发起 ajax ， callback 函数中只有 res , 没有 req ，注意和服务器端的区别
+        $.post('/pages/login', $(this).serialize(), (res) => {
+          if (res.status === 0) {
+            // 登录成功，使用 location.href 跳转到 home.html
+            location.href = './ehang.html'
+          } else {
+            alert('登录失败。')
+          }
+        })
+      })
+    })
+  </script>
+</body>
+</html>

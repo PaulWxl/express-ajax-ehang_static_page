@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ehang招新</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/ehang.css">
+  <script src="./jquery.js"></script>
+  <script src="../lib/font/iconfont.js"></script>
+  <style>
+    .icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <div class="header">
+      <!-- logo区域 -->
+      <div class="ehang-logo">
+        <img src="/image/ehang_logo_queto.png" alt="" class="ehang-logo-img"/>
+      </div>
+      <a href="###">主页</a>
+      <a href="###">岗位投递</a>
+      <a href="###">进度查看</a>
+      <a href="###">了解易航</a>
+      <!-- 登录区域 -->
+      <button class="btn-login"><a href="###">登 录</a></button>
+    </div>
+    <button id="btn-logout">退出</button>
+    
+
+    <!-- 主体区域  -->
+    <div class="main">
+      <p>招新范围：中国民航大学全体<strong>大一</strong>学生</p>
+      <p>网申截止日期：<strong>2023年3月32日25:00(北京时间)</strong></p>
+      <p class="List-Recruitment-Departments">招新部门列表</p>
+      <div class="wrapper">
+        <div class="box1">
+          <div class="left-icon">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-bangong-huibao"></use>
+            </svg>
+          </div>
+          <div class="right-info">
+            <p>办公室</p>
+            <p>237 Jobs Available</p>
+          </div>
+          </div>
+        <div class="box2">
+          <div class="left-icon">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-wangzhankaifa"></use>
+            </svg>
+          </div>
+          <div class="right-info">
+            <p>开发部</p>
+            <p>237 Jobs Available</p>
+          </div>
+        </div>
+        <div class="box3">
+          <div class="left-icon">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-yunying"></use>
+            </svg>
+          </div>
+          <div class="right-info">
+            <p>运营部</p>
+            <p>237 Jobs Available</p>
+          </div>
+        </div>
+        <div class="box4">
+          <div class="left-icon">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-xinmeiti"></use>
+            </svg>
+          </div>
+          <div class="right-info">
+            <p>新媒体部</p>
+            <p>237 Jobs Available</p>
+          </div>
+        </div>
+        <div class="box5">
+          <div class="left-icon">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-pingmiansheji"></use>
+            </svg>
+          </div>
+          <div class="right-info">
+            <p>平面设计部</p>
+            <p>237 Jobs Available</p>
+          </div>
+        </div>
+        <div class="box6">
+          <div class="left-icon">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-yingyin"></use>
+            </svg>
+          </div>
+          <div class="right-info">
+            <p>影音部</p>
+            <p>237 Jobs Available</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 底部区域  -->
+    <div class="footer">
+      <p>易航工作室</p>
+      <p>Copyright @2023 All Rights Reserved</p>
+
+      
+    </div>
+
+    <script>
+      $(function() {
+        // 获取用户名
+        $.get('/pages/username', (res) => {
+          if (res.status === 0) {
+            alert('欢迎你，' + res.username)
+          } else {
+            alert('请先登录。')
+            location.href = './login.html'
+          }
+        })
+
+
+        // 退出 - 给退出按钮绑定点击事件
+        $('#btn-logout').on('click', function() {
+          $.post('/pages/logout', (res) => {
+            if(res.status !== 0) {
+              alert('退出失败。')
+            }else {
+              alert('退出成功。')
+              // 跳转到登录页面
+              location.href = './login.html'
+            }
+          })
+        })
+      })
+    </script>
+</body>
+</html>
